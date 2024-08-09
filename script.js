@@ -8,6 +8,7 @@ let scoreMilestone=5
 const backGroundAudio=new Audio('background.wav')
 const eatAudio=new Audio('eat.wav')
 const lost=new Audio('lost.wav')
+const level=new Audio('level.wav')
 let highestScore=localStorage.getItem('snakeHighestScore')
 if (highestScore==null) {
   highestScore=0
@@ -53,9 +54,12 @@ function gameEngine() {
         document.getElementById('score').innerHTML=`Score: ${score}`
         if (score>0 && score%scoreMilestone==0) {
           speed+=2
+          level.play()
            document.getElementById('speed').innerHTML=`Speed: ${speed}`
         }
-        eatAudio.play()
+        else{
+          eatAudio.play()
+        }
         generateFood()
         increaseLength()
     }
