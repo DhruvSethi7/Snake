@@ -630,6 +630,9 @@ video {
 .col-start-39 { grid-column-start: 39; }
 .col-start-40 { grid-column-start: 40; }
 
+.text-3xl{
+  font-size: larger;
+}
 
 .flex {
   display: flex;
